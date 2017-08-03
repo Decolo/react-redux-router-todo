@@ -17,7 +17,6 @@ let store = createStore(todoApp, { todos:[] })
 let unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 )
-
 ReactDOM.render(
     <Provider store={store}>
       <Router history={browserHistory}>
