@@ -26,6 +26,5 @@ export default class AddTodo extends Component{
     componentDidMount(){
         this.textInput.focus()
     }
-    
 }
 

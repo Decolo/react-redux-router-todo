@@ -10,6 +10,7 @@ export default class TodoList extends Component {
                             onDelete={this.props.onDelete}
                             onModify={this.props.onModify}
                             onEdit={this.props.onEdit}
+                            editbox={this.props.editbox}
                         />)
             })
         return (

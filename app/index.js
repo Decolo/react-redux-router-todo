@@ -7,6 +7,7 @@ import { Provider } from "react-redux"
 import { createStore } from "redux"
 import todoApp from "./reducers/reducers"
 import App from "./containers/App"
+import EditBox from "./components/EditBox"
 
 
 let store = createStore(todoApp, { todos:[] })
@@ -16,13 +17,18 @@ let store = createStore(todoApp, { todos:[] })
 let unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 )
+
 ReactDOM.render(
     <Provider store={store}>
-      <Router>
-        <Route path="/" component={App} />
+      <Router history={browserHistory}>
+        <Route path="/" component={App}>
+          <Route path="editbox" component={EditBox}/>
+        </Route>
       </Router>
     </Provider>,
     document.getElementById("root")
 );
+
+
 
     
