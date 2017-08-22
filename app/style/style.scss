@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Hind:500');
+@import './normalize.css';
+@import './reset.css';
+
+a{
+    color: #ff6d6d;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-family: 'Hind', sans-serif;
+    #root{
+        width: 100%;
+        height: 100%;
+    }
+}
+.layout{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/bp.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-dialog {
+    width: 600px;
+    height: 450px;
+    margin-top: 2rem;
+    background-color: #fffbd2;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 4px 4px 2px #609796;
+    
+    .bubble:nth-of-type(1) {
+        position: absolute;
+        top: -40px;
+        left: 20px;
+        transform: rotate(180deg);
+    }
+    .bubble:nth-of-type(2) {
+        position: absolute;
+        bottom: -40px;
+        right: 20px;
+    }
+    .bubble .wrapper {
+        position: relative;
+        width: 38px;
+        height: 64px;
+        div:nth-of-type(1) {
+            width: 30px;
+            height: 30px;
+            background-color: #fffbd2;
+            border-radius: 15px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        div:nth-of-type(2) {
+            width: 12px;
+            height: 12px;
+            background-color: #fffbd2;
+            border-radius: 6px;
+            position: absolute;
+            right: 8px;
+            top: 36px;
+        }
+            div:nth-of-type(3) {
+            width: 6px;
+            height: 6px;
+            background-color: #fffbd2;
+            border-radius: 3px;
+            position: absolute;
+            left: 4px;
+            top: 50px;
+        }
+    }
+    .login-pic {
+        width: 230px;
+        height: 100%;
+        background-image: url('../img/loginpic.png');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 70%;
+        float: left;
+    }
+    .content {
+        height: 100%;
+        margin-left: 230px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        h1 {
+            padding: 10px 0;
+            font-size: 2.5rem;
+        }
+        form .row {
+            width: 80%;
+            padding-top: 6px;
+            padding-bottom: 4px;
+            margin: 0 auto;
+            display: flex;
+            margin-top: 6px;
+            justify-content: center;
+            label {
+                flex-grow: 1;
+                text-align: left;
+                height: 2rem;
+                line-height: 2rem;
+            }
+            input {
+                border: none;
+                border-radius: 2rem;
+                flex-grow: 4;
+                color: inherit;
+                font-size: 1rem;
+                outline: none;
+                height: 2rem;
+                background-color: rgb(138, 202, 200);
+                padding-left: 10px;
+                color: white;
+            }
+        }
+        form .action {
+            margin-top: 20px;
+            button{
+                box-sizing: content-box;
+                line-height: 2rem;
+                display: block;
+                width: 6rem;
+                height: 2rem;
+                border-radius: 2rem;
+                border: 2px solid #ff6d6d;
+                background-color: #fffbd2;
+                color: #ff6d6d;
+                margin: 0 auto;
+                /*margin-top: 20px;*/
+                cursor: pointer;
+                outline: none;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+            .tip{
+                font-size: 12px;
+                .link{
+                    padding-left: 4px;
+                }
+            }
+        }
+    }
+}
+.user-dialog：after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+.App {
+    text-align: center;
+    width: 600px;
+    min-width: 600px;
+    height: 550px;
+    box-shadow: 0px 4px 4px 2px #609796;
+    border-radius: 20px;
+    font-size: 1rem;
+    background-color: #fffbd2;
+    color: #595a6a;
+    .first-row {
+        text-align: left;
+        padding: 1rem;
+        .title {
+            font-weight: 900;
+            font-size: 2.5rem;
+        }
+    }
+}

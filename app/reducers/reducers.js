@@ -1,5 +1,5 @@
 import { visibilityFilter, todos } from './todoList'
-import formData from './userDialog'
+import { formData } from './userDialog'
 import { combineReducers } from 'redux'
 
 const todoApp = combineReducers({

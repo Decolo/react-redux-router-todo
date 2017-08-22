@@ -1,16 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 // import routes from './routes/routes'
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 // import route from './route'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import todoApp from './reducers/reducers'
+import Page from './components/Page'
 import App from './containers/App'
 import EditBox from './components/EditBox'
-import UserDialog from './components/UserDialog'
-import SignIn from './containers/signInForm'
-import SignUp from './containers/signUpForm'
+import UserDialog from './containers/UserDialog'
+import SignInForm from './components/signInForm'
+import SignUp from './components/signUpForm'
+import ForgetPasswordTab from './components/forgetPsdTab'
+import './style/style.scss'
+import './style/icon-font.css'
 
 
 let store = createStore(todoApp)
@@ -24,12 +28,15 @@ let unsubscribe = store.subscribe(() =>
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
-      <Route path='/' component={App}>
-        <Route path='editbox' component={EditBox} />
-      </Route>
-      <Route path='login' component={UserDialog}>
-        <Route path='signup' component={SignUp} />
-        <Route path='signIn' component={SignIn} />
+      <Route path='/' component={Page}>
+        <Route path='login' component={UserDialog}>
+          <IndexRoute component={SignUp} />
+          <Route path='sign_in' component={SignInForm} />
+          <Route path='forget' component={ForgetPasswordTab} />
+        </Route>
+        <Route path='app' component={App}>
+          <Route path='editbox' component={EditBox} />
+        </Route>
       </Route>
     </Router>
   </Provider>,
@@ -37,5 +44,4 @@ ReactDOM.render(
 )
 
 
-
-    
+ 

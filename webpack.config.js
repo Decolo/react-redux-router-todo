@@ -38,7 +38,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|eot|svg|ttf|woff)$/,
         loaders: [
           'file-loader?hash=sha512&digest=hex&name=[hash]',
           'image-webpack-loader'

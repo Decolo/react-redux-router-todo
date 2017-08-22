@@ -1,12 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { connect } from 'react-redux'
-import { changeFormData } from '../actions/userDialog'
 
-function SignUpForm(props) {
-  const { dispatch } = props
+export default function SignUpForm(props) {
   function onChangeFormData(event, key){
-    dispatch(changeFormData(key, event.target.value))
+    props.changeForm.call(null, key, event.target.value)
   }
   return(
     <form className="sign-up" onSubmit={props.onSubmit}> 
@@ -43,13 +40,10 @@ function SignUpForm(props) {
           placeholder="password"
         /> 
       </div>
-      <div className="row action">
+      <div className="action">
         <button type="submit">Sign Up</button>
-        <p>Already have an account?<Link to="/login/signIn">Sign In</Link></p>
+        <p className="link">Already have an account?<Link to='/login/sign_in' className="link">Sign In</Link></p>
       </div>
     </form>)
 }
 
-export default connect((state) => ({
-  formData: state.formData
-}))(SignUpForm)

@@ -5,7 +5,7 @@ import TodoList from '../components/TodoList'
 import { connect } from 'react-redux'
 import { toggleTodo, editTodo } from '../actions/todoList'
 import Filter from './Filter'
-import '../scss/style.scss'
+
 
 
 
@@ -14,6 +14,18 @@ class App extends Component {
     let { children } = this.props
     return (
       <div className='App'>
+        <div className="first-row">
+          <span className="title">ToDoList</span> 
+          <Link 
+            to="/login" 
+            className="sign-out">
+            <i className="iconfont icon-dengchu"></i>
+          </Link> 
+        </div>
+        <div className="second-row">
+          <div className="todo">todo</div>
+          <div className="done">done</div>
+        </div>
         <AddTodo />
         <TodoList  
           editbox={children}

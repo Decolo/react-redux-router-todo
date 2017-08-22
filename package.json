@@ -6,6 +6,7 @@
     "D": "^1.0.0",
     "antd": "^2.12.2",
     "create-react-class": "^15.6.0",
+    "normalize-scss": "^7.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
