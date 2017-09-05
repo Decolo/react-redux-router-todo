@@ -19,7 +19,7 @@ class TodoList extends Component {
         />)
       })
     return (
-      <ul className="todolist">
+      <ul className="todolist row">
         {todoItem}
       </ul>
     ) 

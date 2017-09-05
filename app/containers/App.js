@@ -13,23 +13,27 @@ class App extends Component {
   render() {
     let { children } = this.props
     return (
-      <div className='App'>
-        <div className="first-row">
-          <span className="title">ToDoList</span> 
-          <Link 
-            to="/login" 
-            className="sign-out">
-            <i className="iconfont icon-dengchu"></i>
-          </Link> 
+      <div className="App">
+        <div className="title row">
+          <p>ToDoList</p>
+          <div className="btn-container">
+            <Link 
+              to="/login" 
+              className="sign-out">
+              <i className="iconfont icon-dengchu"></i>
+            </Link> 
+          </div> 
         </div>
-        <div className="second-row">
-          <div className="todo">todo</div>
-          <div className="done">done</div>
-        </div>
-        <AddTodo />
+        <ul className="hint row">
+          <li className="todo">todo</li>
+          <li className="done">done</li>
+        </ul>
         <TodoList  
           editbox={children}
         />
+        <div className="input row">
+          <AddTodo />
+        </div>
         <Filter />
       </div>
     )

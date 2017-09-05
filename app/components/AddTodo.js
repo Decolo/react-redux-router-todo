@@ -6,13 +6,12 @@ import { addNewTodo } from "../actions/todoList"
 
 
 class AddTodo extends Component{
-  constructor(props){
+  constructor(props) {
     super(props)
     this.onClick = this.onClick.bind(this)
   }
-  onClick(){
+  onClick() {
     let { dispatch } = this.props
-    //输入不能为空还要细化
     if(this.textInput.value){
       dispatch(addNewTodo(this.textInput.value))
       this.textInput.value = ''
@@ -20,14 +19,16 @@ class AddTodo extends Component{
       alert("输入不能为空")
     }
   }
-  render(){
+  render() {
     return (
-      <div className="addTodo">
+      <div className="add-item">
+        <a onClick={this.onClick.bind(this)}>Add</a>
         <input 
           type="text" 
-          ref={ (input) => {this.textInput = input} }
+          ref={(input) => {
+            this.textInput = input
+          }}
         />
-        <button onClick={this.onClick}>Add</button>
       </div>
     )
   }

@@ -11,7 +11,7 @@ class Filter extends React.Component{
   }
   render() {
     return(
-      <ul className="filter">
+      <ul className="filter row">
         <li onClick={event => this.handleClick.bind(this, event).call(null, 'SHOW_ALL')}>show all</li>
         <li onClick={event => this.handleClick.bind(this, event).call(null, 'SHOW_COMPLETED')}>show completed</li>
         <li onClick={event => this.handleClick.bind(this, event).call(null, 'SHOW_ACTIVE')}>show active</li>
