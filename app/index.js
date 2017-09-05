@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 // import routes from './routes/routes'
-import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import { Router, Route, hashHistory, IndexRoute, Redirect } from 'react-router'
 // import route from './route'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
@@ -29,6 +29,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
       <Route path='/' component={Page}>
+        <Redirect from="/" to="/admin" />
         <Route path='login' component={UserDialog}>
           <IndexRoute component={SignUp} />
           <Route path='sign_in' component={SignInForm} />
